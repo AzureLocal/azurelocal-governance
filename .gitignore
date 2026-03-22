@@ -1,0 +1,12 @@
+# Variables (never commit real values)
+config/variables.yml
+*.tfvars
+*.env
+*.secrets
+
+# Build output
+site/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,38 @@
+name: Validate Repo Structure
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required root files
+        run: |
+          missing=0
+          for f in README.md CONTRIBUTING.md LICENSE CHANGELOG.md .gitignore; do
+            if [ ! -f "$f" ]; then
+              echo "::error::Missing required file: $f"
+              missing=$((missing + 1))
+            fi
+          done
+          if [ $missing -gt 0 ]; then
+            exit 1
+          fi
+          echo "All required root files present"
+
+      - name: Check required directories
+        run: |
+          missing=0
+          for d in docs .github; do
+            if [ ! -d "$d" ]; then
+              echo "::error::Missing required directory: $d/"
+              missing=$((missing + 1))
+            fi
+          done
+          if [ $missing -gt 0 ]; then
+            exit 1
+          fi
+          echo "All required directories present"
