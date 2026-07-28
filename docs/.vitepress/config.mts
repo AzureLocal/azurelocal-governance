@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/azurelocal-governance/',
   title: "azurelocal-governance Documentation",
   description: "Governed centrally by HCS Platform Engineering standards",
   themeConfig: {
@@ -26,4 +27,5 @@ export default defineConfig({
     }
   }
 })
+
 

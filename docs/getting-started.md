@@ -1,8 +1,9 @@
 # Getting Started
 
-!!! warning "Under Active Development"
-    This page is a placeholder. Full getting started content will be added as the solution matures.
-
+> [!WARNING]
+> **Under Active Development**
+> This page is a placeholder. Full getting started content will be added as the solution matures.
+>
 ## Prerequisites
 
 - Azure Local cluster (23H2+) registered with Azure Arc
